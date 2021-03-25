@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Montserrat&display=swap');
+
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --light-color: #93B4D7;
+    --body-color: #385187;
+    --heading-color:#2C406E;
+    --contrast-color: #8C8122;
+}
+
+
+body {
+    font-size: 18px;
+    line-height: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    background-image: radial-gradient(circle at 13% 47%, rgba(147,180,215, 0.34) 0%, rgba(147,180,215, 0.34) 25%,transparent 25%, 
+    transparent 100%),radial-gradient(circle at 28% 63%, rgba(147,180,215, 0.05) 0%, rgba(147,180,215, 0.05) 16%,transparent 16%, 
+    transparent 100%),radial-gradient(circle at 81% 56%, rgba(147,180,215, 0.28) 0%, rgba(147,180,215, 0.28) 12%,transparent 12%, 
+    transparent 100%),radial-gradient(circle at 26% 48%, rgba(60, 60, 60,0.03) 0%, rgba(60, 60, 60,0.03) 6%,transparent 6%, 
+    transparent 100%),radial-gradient(circle at 97% 17%, rgba(147,180,215, 0.09) 0%, rgba(147,180,215, 0.09) 56%,transparent 56%, 
+    transparent 100%),radial-gradient(circle at 50% 100%, rgba(147,180,215, 0.09) 0%, rgba(147,180,215, 0.09) 36%,transparent 36%, 
+    transparent 100%),radial-gradient(circle at 55% 52%, rgba(147,180,215, 0.09) 0%, rgba(147,180,215, 0.09) 6%,transparent 6%, 
+    transparent 100%),linear-gradient(90deg, rgba(147,180,215, 0.09),rgba(147,180,215, 0.09));
+    color: var(--body-color);
+}
+
+h1, h2, h3 {
+    line-height: 1.2em;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--heading-color);
+}
+
+a:hover {
+    color: var(--contrast-color);
+}
+
+body#about img {
+    height: 15em;
+}
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                            "nav nav" 
+                            "main main"     
+                            "foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: 
+                            "head head"
+                            "nav main"
+                            "foot foot";
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body > header {
+    grid-area: head;
+    /* background-color: yellow; */
+}
+
+body > nav {
+    grid-area: nav;
+    /* background-color: blue; */
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body > main {
+    grid-area: main;
+    /* background-color: purple; */
+}
+
+body > footer {
+    grid-area: foot;
+    /* background-color: red; */
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space)
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
