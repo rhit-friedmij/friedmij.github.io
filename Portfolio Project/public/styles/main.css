@@ -16,7 +16,7 @@ body {
     font-size: 18px;
     line-height: 1.5em;
     font-family: 'Montserrat', sans-serif;
-    background-image: radial-gradient(circle at 13% 47%, rgba(147,180,215, 0.34) 0%, rgba(147,180,215, 0.34) 25%,transparent 25%, 
+    background: radial-gradient(circle at 13% 47%, rgba(147,180,215, 0.34) 0%, rgba(147,180,215, 0.34) 25%,transparent 25%, 
     transparent 100%),radial-gradient(circle at 28% 63%, rgba(147,180,215, 0.05) 0%, rgba(147,180,215, 0.05) 16%,transparent 16%, 
     transparent 100%),radial-gradient(circle at 81% 56%, rgba(147,180,215, 0.28) 0%, rgba(147,180,215, 0.28) 12%,transparent 12%, 
     transparent 100%),radial-gradient(circle at 26% 48%, rgba(60, 60, 60,0.03) 0%, rgba(60, 60, 60,0.03) 6%,transparent 6%, 
@@ -44,11 +44,10 @@ a:hover {
 
 body#about img {
     height: 15em;
+    box-shadow: -5px 3px 13px 0px rgba(0,0,0,0.5);
 }
 
-p {
-    max-width: 50em;
-}
+
 
 body {
     display: grid;
@@ -63,8 +62,8 @@ body {
 @media screen and (min-width: 25em) {
     body {
         grid-template-areas: 
-                            "head head"
-                            "nav main"
+                            "head nav"
+                            "main main"
                             "foot foot";
         grid-template-columns: 1fr 4fr;
         grid-template-rows: auto 1fr auto;
@@ -89,11 +88,25 @@ body > nav {
 body > nav ul {
     list-style-type: none;
     padding: 0;
+    padding-top: 0;
+}
+
+body > nav ul li {
+    display: inline-block;
 }
 
 body > main {
     grid-area: main;
     /* background-color: purple; */
+}
+
+body > main > *:first-child {
+    border-top: 2px solid var(--heading-color);
+    padding-top: 1rem;
+}
+
+body > main p, body > main h1 {
+    max-width: 50rem;
 }
 
 body > footer {
@@ -103,7 +116,6 @@ body > footer {
 
 header, footer {
     padding-top: var(--vertical-space);
-    padding-bottom: var(--vertical-space)
 }
 
 header h1, footer h1 {
@@ -123,8 +135,21 @@ body#portfolio ul#portfolioItems {
         flex-basis: 48%;
         padding-right: 2%;
     }
+
+    body > nav ul {
+        padding: 0;
+        padding-top: 3rem;
+    }
+
+    body#about img {
+        display: inline;
+        float: left;
+        margin-right: var(--horizontal-space);
+    }
+
 }
 
 body#portfolio ul#portfolioItems li img {
     max-width: 100%;
+    box-shadow: -5px 3px 13px 0px rgba(0,0,0,0.5);
 }
