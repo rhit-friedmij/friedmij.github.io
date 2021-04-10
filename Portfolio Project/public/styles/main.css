@@ -97,7 +97,6 @@ body > nav ul li {
 
 body > main {
     grid-area: main;
-    /* background-color: purple; */
 }
 
 body > main > *:first-child {
